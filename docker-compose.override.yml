@@ -5,3 +5,8 @@ services:
       - type: bind
         source: ./librechat.yaml
         target: /app/librechat.yaml
+      # Custom image's WORKDIR is /app/api (api-build target), so dotenv
+      # needs .env there too. Upstream image keeps using /app/.env (above).
+      - type: bind
+        source: ./.env
+        target: /app/api/.env
