@@ -1,5 +1,6 @@
 services:
   api:
+    image: ghcr.io/mlkbr/paragon-librechat:latest
     volumes:
       - type: bind
         source: ./librechat.yaml
